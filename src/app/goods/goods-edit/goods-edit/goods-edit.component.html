@@ -1,0 +1,66 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" [style.width]="'13%'">Название</th>
+            <th scope="col" [style.width]="'11%'">Артикул</th>
+            <th scope="col" [style.width]="'12%'">Цена</th>
+            <th scope="col" [style.width]="'14%'">Производитель</th>
+            <th scope="col" [style.width]="'13%'">Категория</th>
+            <th scope="col" [style.width]="'12%'">Вес</th>
+            <th scope="col" [style.width]="'12%'">Количество</th>
+            <th scope="col" [style.width]="'5%'"></th>
+            <th scope="col" [style.width]="'10%'">Подтвердить</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td [formGroup]="goodForm">
+            <div class="col-13">
+                <input type="text" class="form-control" placeholder="Название" formControlName="name" />
+            </div>
+        </td>
+        <td [formGroup]="goodForm">
+            <div class="col-13">
+                <input type="text" class="form-control" placeholder="Артикул" formControlName="articul"/>
+            </div>
+        </td>
+        <td [formGroup]="goodForm">
+            <div class="col-13">
+                <input type="number" class="form-control" placeholder="Цена" formControlName="price" 
+                min="0"/>
+            </div>
+        </td>
+        <td [formGroup]="goodForm">
+            <div class="col-13">
+                <input type="text" class="form-control" placeholder="Производитель" formControlName="maker"/>
+            </div>
+        </td>
+        <td [formGroup]="goodForm">
+            <select class="change" formControlName="kategory">
+                <option [ngValue]="goodsType.furniture">Мебель</option>
+                <option [ngValue]="goodsType.tech">Техника</option>
+                <option [ngValue]="goodsType.book">Книги</option>
+                <option [ngValue]="goodsType.phone">Телефоны</option>
+            </select>
+        </td>
+        <td [formGroup]="goodForm">
+            <div class="col-13">
+                <input type="number" class="form-control" placeholder="Вес" formControlName="weight"
+                min="0"/>
+            </div>
+        </td>
+        <td [formGroup]="goodForm">
+            <div class="col-13">
+                <input type="number" class="form-control" placeholder="Количество" formControlName="count"
+                min="0"/>
+            </div>
+        </td>
+        <td>
+            <button (click)="onDeleteGood()" class="btn btn-outline-danger btn-sm ml-3"
+                *ngIf="id != null">Удалить</button>
+        </td>
+        <td>
+            <button class="btn btn-primary mr-4 " 
+        (click)='onConfirm()'[disabled]='goodForm.invalid'>Сохранить</button>
+        </td>
+    </tbody>
+</table>

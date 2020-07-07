@@ -1,0 +1,37 @@
+<div class="container" *ngIf="goods.length> 0">
+    <div class="col-10">
+        <h5>{{title}}</h5>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" [style.width]="'16%'">Название</th>
+                <th scope="col" [style.width]="'15%'">Вес</th>
+                <th scope="col" [style.width]="'16%'">Цена</th>
+                <th scope="col" [style.width]="'12%'">На складе</th>
+                <th scope="col" [style.width]="'5%'"></th>
+                <th scope="col" [style.width]="'10%'">Изменить описание</th>
+                <th scope="col" [style.width]="'12%'">Изменить количество</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let good of goods">
+                <td>{{good.name}}</td>
+                <td>{{good.weight}}</td>
+                <td>{{good.price}}</td>
+                <td>{{good.count}}</td>
+                <td>
+                    <button (click)="onDeleteGood(good.id)"
+                        class="btn btn-outline-danger btn-sm text-right">Удалить</button>
+                </td>
+                <td>
+                    <button class="btn btn-outline-primary btn-sm" (click)="onChangeName(good.id)">Изменить</button>
+                </td>
+                <td>
+                    <button class="btn btn-outline-info btn-sm mr-3" (click)="onPlus(good)">+</button>
+                    <button class="btn btn-outline-info btn-sm" (click)="onMinus(good)"> - </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,35 @@
+<router-outlet></router-outlet>
+<div class="container-fluid">
+    <div class="row mb-3 ml-5">
+        <div class="col-12">
+            <h1>{{title}}</h1>
+        </div>
+    </div>
+    <div class="row mb-3 ml-10">
+        <div class="col-5 mb-3 mt-2">
+            <div>Сортировка по
+                <select class="change" [(ngModel)]="sorst">
+                    <option [ngValue]="1">Цена</option>
+                    <option [ngValue]="2">Количество</option>
+                </select>
+                Способ сортировки
+                <select class="change" [(ngModel)]="typeSort">
+                    <option [ngValue]="1">По убыванию</option>
+                    <option [ngValue]="2">По возрастанию</option>
+                </select>
+            </div>
+        </div>
+        <button class="btn btn-primary mb-3 mr-3" (click)="sourt(sorst, typeSort)">Применить</button>
+        <button class="btn btn-primary mb-3 mr-3" (click)="filt(1)">Показать только в наличии</button>
+        <button class="btn btn-primary mb-3 mr-3" (click)="filt(0)">Показать все</button>
+        <button class="btn btn-primary text-right mb-3" (click)="onAddGood()">Добавить товар</button>
+    </div>
+    <app-goods-list [title]="'Мебель'" [goods]="getByType(MGoodsType.furniture)  | filerpipe: filte"
+        (deleteGood)="onDeleteGood($event)"></app-goods-list>
+    <app-goods-list [title]="'Техника'" [goods]="getByType(MGoodsType.tech)  | filerpipe: filte"
+        (deleteGood)="onDeleteGood($event)"></app-goods-list>
+    <app-goods-list [title]="'Книги'" [goods]="getByType(MGoodsType.book)  | filerpipe: filte"
+        (deleteGood)="onDeleteGood($event)"></app-goods-list>
+    <app-goods-list [title]="'Телефоны'" [goods]="getByType(MGoodsType.phone)  | filerpipe: filte"
+        (deleteGood)="onDeleteGood($event)"></app-goods-list>
+</div>

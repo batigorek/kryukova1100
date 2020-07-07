@@ -1,0 +1,54 @@
+{
+  "goods": [
+    {
+      "name": "Tool",
+      "weight": 5000,
+      "price": 20000,
+      "count": 26,
+      "kategory": 0,
+      "articul": 234355,
+      "maker": "Cool-Tool",
+      "id": 0
+    },
+    {
+      "name": "Vacuum",
+      "weight": 5000,
+      "price": 20000,
+      "count": 17,
+      "kategory": 1,
+      "articul": 234355,
+      "maker": "Cool-Tool",
+      "id": 1
+    },
+    {
+      "id": 3,
+      "name": "Sumsung",
+      "kategory": 3,
+      "weight": 180,
+      "price": 80000,
+      "count": 2,
+      "articul": 234355,
+      "maker": "Cool-Tool"
+    },
+    {
+      "name": "Вино из одуванчиков",
+      "weight": 200,
+      "price": 450,
+      "count": 700,
+      "kategory": 2,
+      "articul": "012520",
+      "maker": "ОАО \"Аст\"",
+      "id": 4
+    },
+    {
+      "name": "Стол",
+      "weight": 200,
+      "price": 45000,
+      "count": 2,
+      "kategory": 0,
+      "articul": "240582",
+      "maker": "",
+      "id": 5
+    }
+  ]
+}
