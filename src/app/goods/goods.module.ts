@@ -9,10 +9,11 @@ import { GoodsListComponent } from './goods-list/goods-list/goods-list.component
 import { GoodsComponent } from './goods/goods.component';
 import { GoodsEditComponent } from './goods-edit/goods-edit/goods-edit.component';
 import { FilerpipePipe } from '../shared/pipes/filerpipe.pipe';
+import { KatsortPipe } from '../shared/pipes/katsort.pipe';
 
 
 @NgModule({
-  declarations: [GoodsListComponent, GoodsComponent, GoodsEditComponent, FilerpipePipe],
+  declarations: [GoodsListComponent, GoodsComponent, GoodsEditComponent, FilerpipePipe, KatsortPipe],
   imports: [
     CommonModule,
     GoodsRoutingModule,

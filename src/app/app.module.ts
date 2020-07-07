@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { InformationComponent } from './information/information.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FilerpipePipe } from './shared/pipes/filerpipe.pipe';
 
 @NgModule({
   declarations: [
