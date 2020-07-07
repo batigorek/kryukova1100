@@ -17,14 +17,14 @@
                     <option [ngValue]="1">По убыванию</option>
                     <option [ngValue]="2">По возрастанию</option>
                 </select>
-                <select class="change ml-5 mr-5 " [(ngModel)]="kateSort">
+                <select class="change ml-3 " [(ngModel)]="kateSort">
                     <option [ngValue]="4">Все</option>
                     <option [ngValue]="0">Мебель</option>
                     <option [ngValue]="1">Техника</option>
                     <option [ngValue]="2">Книги</option>
                     <option [ngValue]="3">Телефоны</option>
                 </select>
-                <button class="btn btn-primary ml-3" (click)="sourt(sorst, typeSort, kateSort)">Применить</button>
+                <button class="btn btn-primary ml-3 mb-3" (click)="sourt(sorst, typeSort, kateSort)">Применить</button>
             </div>
         </div>
         <button class="btn btn-primary mb-3 mr-3" (click)="filt(1)">Показать только в наличии</button>
@@ -37,6 +37,6 @@
         (deleteGood)="onDeleteGood($event)"></app-goods-list>
     <app-goods-list [title]="'Книги'" [goods]="getByType(MGoodsType.book)  | filerpipe: filte  | katsort: kate"
         (deleteGood)="onDeleteGood($event)"></app-goods-list>
-    <app-goods-list [title]="'Телефоны'" [goods]="getByType(MGoodsType.phone)  | filerpipe: filte  | katsort: kate"
+    <app-goods-list [title]="'Телефоны'" [goods]="getByType(MGoodsType.phone)  | filerpipe: filte | katsort: kate "
         (deleteGood)="onDeleteGood($event)"></app-goods-list>
 </div>
